@@ -311,6 +311,7 @@ func TestProcessBucketLocationResponse(t *testing.T) {
 		{"my-bucket", "", false, APIError{}, "us-east-1", nil, true},
 		{"my-bucket", "\n  \n", false, APIError{}, "us-east-1", nil, true},
 		{"my-bucket", " \neu-central-1\t", false, APIError{}, "eu-central-1", nil, true},
+		{"my-bucket", " EU ", false, APIError{}, "eu-west-1", nil, true},
 		{"my-bucket", "EU", false, APIError{}, "eu-west-1", nil, true},
 		{"my-bucket", "eu-central-1", false, APIError{}, "eu-central-1", nil, true},
 		{"my-bucket", "us-east-1", false, APIError{}, "us-east-1", nil, true},
